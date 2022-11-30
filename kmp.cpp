@@ -22,17 +22,16 @@ int main()
 	char *s = "abcaabbcabcaabdab";
 	int next[20];
 	getnext(next, s);
-	for (int i = 1; i <=strlen(s); i++)
+	for (int i = 0; i <strlen(s); i++)
 	{
-		next[i]=next[i-1];//由最长前后缀数组向右移一位得到next数组
+		next[i]=next[i+1];
 	}
-	next[0]=-1;
-		for (int i = 1; i <=strlen(s); i++)
+		for (int i = 0; i <strlen(s); i++)
 	{
 		cout << next[i]<<" ";
 	}
 
-}
+}//这里的next[j]为j对应的最长前后缀长度
 //利用next数组可实现kmp算法
 // int KmpSearch(char* s, char* p)
 // {
